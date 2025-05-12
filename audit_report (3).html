@@ -1,0 +1,15 @@
+<html><head><title>Audit Report</title></head><body>
+<h1>Code Audit Report</h1>
+<h2>File: code_audit_test\vuln2.py</h2>
+<table border='1' cellpadding='5'><tr><th>Line</th><th>Vulnerability</th><th>CVEs</th><th>Mitigation</th></tr>
+<tr><td>18</td><td>Possible SQL injection vector through string-based query construction.</td><td>CVE-2013-4313, CVE-2025-4488</td><td>Use parameterized queries or ORM frameworks to prevent SQL injection vulnerabilities.</td></tr>
+<tr><td>31</td><td>A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.</td><td>CVE-2015-5306</td><td>Set &#x27;debug=False&#x27; in production Flask apps to prevent code execution via the debugger.</td></tr>
+</table><br>
+<h2>File: code_audit_test\vuln_code.py</h2>
+<table border='1' cellpadding='5'><tr><th>Line</th><th>Vulnerability</th><th>CVEs</th><th>Mitigation</th></tr>
+<tr><td>2</td><td>Consider possible security implications associated with the subprocess module.</td><td>CVE-2024-41956, CVE-2024-52976</td><td>Avoid passing unsanitized user input to subprocess calls; use argument lists instead of shell=True.</td></tr>
+<tr><td>4</td><td>Possible hardcoded password: &#x27;1234&#x27;</td><td>CVE-2024-8551</td><td>Remove hardcoded credentials from code; use environment variables or secure vaults for secrets.</td></tr>
+<tr><td>6</td><td>Starting a process with a shell, possible injection detected, security issue.</td><td>CVE-2021-25094</td><td>Avoid &#x27;shell=True&#x27; in subprocess calls; use argument lists and input validation instead.</td></tr>
+<tr><td>7</td><td>subprocess call with shell=True identified, security issue.</td><td>CVE-2024-39686, CVE-2024-41956, CVE-2024-52976, CVE-2024-53992</td><td>Do not use &#x27;shell=True&#x27; with subprocess if input includes user data; prefer &#x27;shell=False&#x27; with argument arrays.</td></tr>
+</table><br>
+</body></html>
